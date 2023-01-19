@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useContext, createContext } from "react";
+import { useContext, createContext, useState } from "react";
 
 const AppContext = createContext({
   items: [],
@@ -28,7 +27,7 @@ export default function Store({ children }) {
       image: "",
       state: "purchased",
     },
-  ]);
+  ], []);
   function addItem(item) {}
   function updateItem(item) {}
   function deleteItem(id) {}

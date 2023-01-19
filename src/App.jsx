@@ -4,16 +4,20 @@ import "./App.css";
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./routes/Home";
 import About from "./routes/About";
-import Store from "./routes/Store";
+import Register from "./routes/Register";
+import Store from "./store/Store";
+import Menu from "./components/Menu";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <Store>
+      <Menu></Menu>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
+        <Route path="register" element={<Register />}/>
       </Routes>
     </Store>
   );
