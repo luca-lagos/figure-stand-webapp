@@ -4,18 +4,13 @@ export default function Menu() {
   return (
     <ul>
       <li>
-        <Link to="/">
-          <a href="/home">Home</a>
-        </Link>
+        <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="about">
-          <a href="/about">About</a>
-        </Link>
+        <Link to="about">About</Link>
       </li>
       <li>
-        <Link to="register">
-        <a href="register">Register</a></Link>
+        <Link to="register">Register</Link>
       </li>
     </ul>
   );

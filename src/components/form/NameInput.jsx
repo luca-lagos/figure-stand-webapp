@@ -1,15 +1,15 @@
 import { useForm, useField, splitFormProps } from "react-form";
 
 async function validateName(name, instance) {
-    if (!name) {
-      return "A name is required";
-    }
-    return instance.debounce(async () => {
-      console.log("checking name");
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      return false;
-    }, 500);
+  if (!name) {
+    return "A name is required";
   }
+  return instance.debounce(async () => {
+    console.log("checking name");
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    return false;
+  }, 500);
+}
 
 export default function NameInput() {
   const {

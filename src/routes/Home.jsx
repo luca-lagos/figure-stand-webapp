@@ -1,4 +1,5 @@
 import { useAppContext } from "../store/Store";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const store = useAppContext();
@@ -6,7 +7,9 @@ export default function Home() {
     <div>
       Home
       {store.items.map((item) => (
-        <div>{item.name}</div>
+        <div>
+          <Link to={"edit/" + item.id}>{item.name}</Link>
+        </div>
       ))}
     </div>
   );
