@@ -3,7 +3,7 @@ import { useContext, createContext, useState } from "react";
 const AppContext = createContext({
   items: [],
   addItem: (item) => {},
-  updateItem: (item) => {},
+  updateItem: (updatedItem) => {},
   deleteItem: (id) => {},
   getItem: (id) => {},
 });
@@ -12,19 +12,19 @@ export default function Store({ children }) {
   const [items, setItems] = useState(
     [
       {
-        id: '0',
+        id: "0",
         name: "di rocco",
         image: "",
         state: "purchased",
       },
       {
-        id: '1',
+        id: "1",
         name: "gomez",
         image: "",
         state: "purchased",
       },
       {
-        id: '2',
+        id: "2",
         name: "andino",
         image: "",
         state: "purchased",
@@ -40,7 +40,12 @@ export default function Store({ children }) {
   function getItem(id) {
     return items.find((item) => item.id === id);
   }
-  function updateItem(item) {}
+  function updateItem(updatedItem) {
+    const copy = [...items];
+    let tmp = copy.find((item) => item.id === updatedItem.id);
+    tmp = updateItem;
+    setItems([...copy]);
+  }
   function deleteItem(id) {}
   return (
     <AppContext.Provider

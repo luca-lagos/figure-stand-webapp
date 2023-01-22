@@ -11,8 +11,9 @@ async function validateName(name, instance) {
   }, 500);
 }
 
-export default function NameInput() {
+export default function NameInput({inputValue}) {
   const {
+    value = inputValue,
     meta: { error, isTouched, isValidating },
     getInputProps,
   } = useField("name", {
@@ -21,7 +22,7 @@ export default function NameInput() {
 
   return (
     <>
-      <input {...getInputProps()} />{" "}
+      <input {...getInputProps({value})} />{" "}
       {isValidating ? (
         <em>Validating...</em>
       ) : isTouched && error ? (
