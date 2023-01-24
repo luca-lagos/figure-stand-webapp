@@ -9,29 +9,7 @@ const AppContext = createContext({
 });
 
 export default function Store({ children }) {
-  const [items, setItems] = useState(
-    [
-      {
-        id: "0",
-        name: "di rocco",
-        image: "",
-        state: "purchased",
-      },
-      {
-        id: "1",
-        name: "gomez",
-        image: "",
-        state: "purchased",
-      },
-      {
-        id: "2",
-        name: "andino",
-        image: "",
-        state: "purchased",
-      },
-    ],
-    []
-  );
+  const [items, setItems] = useState([]);
   function addItem(item) {
     const copy = [...items];
     copy.push(item);
