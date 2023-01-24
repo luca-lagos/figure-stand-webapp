@@ -2,6 +2,7 @@ import { Route, Routes, useParams } from "react-router-dom";
 import { useAppContext } from "../store/Store";
 import { useForm, useField, splitFormProps } from "react-form";
 import NameInput from "../components/form/NameInput";
+import PictureInput from "../components/form/PictureInput";
 
 export default function Edit() {
   const params = useParams();
@@ -22,8 +23,11 @@ export default function Edit() {
   return (
     <div>
       <Form>
-        <NameInput inputValue={item.name}/>
+        <NameInput inputValue={item.name} />
+        <PictureInput />
       </Form>
+      {item.name}
+      {item.picture && <img src={item.picture} alt="" width={250} />}
     </div>
   );
 }

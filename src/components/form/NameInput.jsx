@@ -26,7 +26,7 @@ export default function NameInput({inputValue}) {
       {isValidating ? (
         <em>Validating...</em>
       ) : isTouched && error ? (
-        <em>{error}</em>
+        <em>{error || ""}</em>
       ) : null}
     </>
   );
