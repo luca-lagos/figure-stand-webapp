@@ -29,6 +29,7 @@ export default function Register() {
     <div>
       <Form>
         <NameInput />
+        <StateInput />
         <PictureInput />
       </Form>
     </div>
