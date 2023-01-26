@@ -2,6 +2,10 @@ import { useForm, useField, splitFormProps } from "react-form";
 
 const options = [
   {
+    id: "none",
+    title: "Seleccionar un estado...",
+  },
+  {
     id: "purchased",
     title: "Comprado",
   },
@@ -11,30 +15,44 @@ const options = [
   },
 ];
 
-export default function StateInput() {
+async function validateState(state, instance) {
+  if (!state) {
+    return "A state is required";
+  }
+  return instance.debounce(async () => {
+    console.log("checking state");
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    return false;
+  }, 500);
+}
+
+export default function StateInput(props) {
+  const [field, fieldOptions, { ...rest }] = splitFormProps(props);
   const {
-    value,
+    value = "",
     setValue,
     meta: { error, isTouched },
-  } = useField("state", fieldOptions);
+  } = useField("state", { validate: validateState });
 
   const HandleSelectChange = (e) => {
     setValue(e.target.value);
   };
   return (
-    <select
-      name="state"
-      {...rest}
-      value={value}
-      onChange={HandleSelectChange}
-      id=""
-    >
-      {options.map((option) => {
-        <option key={value.id} value={option.id}>
-          {option.title}
-        </option>;
-      })}
-    </select>
+    <div>
+      <label>Estado del item</label>
+      <select
+        name="state"
+        {...rest}
+        value={value}
+        onChange={HandleSelectChange}
+      >
+        {options.map((option) => {
+          <option key={option.id} value={option.id}>
+            {option.title}
+          </option>;
+        })}
+      </select>
+    </div>
   );
 }
 

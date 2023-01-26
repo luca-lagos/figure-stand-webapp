@@ -1,6 +1,7 @@
 import { useForm, useField, splitFormProps } from "react-form";
 import NameInput from "../components/form/NameInput";
 import PictureInput from "../components/form/PictureInput";
+import StateInput from "../components/form/StateInput";
 import { useAppContext } from "../store/Store";
 import { useNavigate } from "react-router-dom";
 
