@@ -15,17 +15,6 @@ const options = [
   },
 ];
 
-async function validateState(state, instance) {
-  if (!state) {
-    return "A state is required";
-  }
-  return instance.debounce(async () => {
-    console.log("checking state");
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    return false;
-  }, 500);
-}
-
 export default function StateInput(props) {
   const [field, fieldOptions, { ...rest }] = splitFormProps(props);
   const {
@@ -35,8 +24,19 @@ export default function StateInput(props) {
   } = useField("state", { validate: validateState });
 
   const HandleSelectChange = (e) => {
+    console.log(e.target.value);
     setValue(e.target.value);
   };
+  async function validateState(name, instance) {
+    if (!name) {
+      return "A state is required";
+    }
+    return instance.debounce(async () => {
+      console.log("checking state");
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      return false;
+    }, 500);
+  }
   return (
     <div>
       <label>Estado del item</label>
@@ -46,11 +46,11 @@ export default function StateInput(props) {
         value={value}
         onChange={HandleSelectChange}
       >
-        {options.map((option) => {
+        {options.map((option) => (
           <option key={option.id} value={option.id}>
             {option.title}
-          </option>;
-        })}
+          </option>
+        ))}
       </select>
     </div>
   );

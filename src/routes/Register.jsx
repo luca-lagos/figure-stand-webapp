@@ -4,6 +4,7 @@ import PictureInput from "../components/form/PictureInput";
 import StateInput from "../components/form/StateInput";
 import { useAppContext } from "../store/Store";
 import { useNavigate } from "react-router-dom";
+import styles from "../assets/css/register.module.css";
 
 export default function Register() {
   const store = useAppContext();
@@ -13,12 +14,12 @@ export default function Register() {
     meta: { isSubmitting, canSubmit },
   } = useForm({
     onSubmit: async (values, instance) => {
-      const { name, picture } = values;
+      const { name, picture, state } = values;
       const newItem = {
         id: crypto.randomUUID(),
         name,
         picture,
-        state: "purchased",
+        state,
       };
       console.log(newItem);
       store.addItem(newItem);
@@ -27,10 +28,13 @@ export default function Register() {
     debugForm: false,
   });
   return (
-    <div>
+    <div className={styles.formContainer}>
       <Form>
+        <label htmlFor="">Fullname</label>
         <NameInput />
+        <label htmlFor="">State</label>
         <StateInput />
+        <label htmlFor="">Item picture</label>
         <PictureInput />
       </Form>
     </div>

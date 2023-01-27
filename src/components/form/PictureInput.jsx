@@ -1,6 +1,7 @@
 import { useForm, useField, splitFormProps } from "react-form";
 import { useRef } from "react";
 import { useEffect } from "react";
+import styles from "../../assets/css/register.module.css";
 
 async function validatePicture(picture, instance) {
   if (!picture) {
@@ -51,22 +52,22 @@ export default function PictureInput() {
         style={{ display: "none" }}
       />
       <input
-        type="text"
+        type={"text"}
         name="picture"
         id=""
         {...getInputProps()}
         style={{ display: "none" }}
       />
-      <button onClick={HandleClick}>Select image</button>{" "}
+      <button className={styles.btnPicture} onClick={HandleClick}>Select image</button>{" "}
       {isValidating ? (
         <em>Validating...</em>
       ) : isTouched && error ? (
         <em>{error || ""}</em>
       ) : null}
-      <div className="preview">
+      <div className={styles.preview}>
         <img ref={imageRef} src="" alt="" width={250}/>
       </div>
-      <input type="submit" value="create" />
+      <input className={styles.btnSubmit} type="submit" value="create" />
     </>
   );
 }

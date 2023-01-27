@@ -22,7 +22,7 @@ export default function NameInput({inputValue}) {
 
   return (
     <>
-      <input {...getInputProps({value})} />{" "}
+      <input type={"text"} {...getInputProps({value})} />{" "}
       {isValidating ? (
         <em>Validating...</em>
       ) : isTouched && error ? (
