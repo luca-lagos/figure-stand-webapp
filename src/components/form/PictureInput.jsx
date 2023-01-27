@@ -67,7 +67,6 @@ export default function PictureInput() {
       <div className={styles.preview}>
         <img ref={imageRef} src="" alt="" width={250}/>
       </div>
-      <input className={styles.btnSubmit} type="submit" value="create" />
     </>
   );
 }

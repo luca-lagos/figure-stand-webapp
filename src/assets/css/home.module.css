@@ -1,0 +1,34 @@
+.container{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+width: 1000px;
+border: 1px solid red;
+margin: 0 auto;
+}
+
+.figure{
+    position: relative;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    cursor: pointer;
+    background-color: transparent;
+    color: transparent;
+    font-size: 25px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease;
+}
+
+.overlay:hover{
+    background-color: rgba(14, 88, 158, 0.5);
+    color: white;
+}

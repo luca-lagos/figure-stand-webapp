@@ -22,6 +22,7 @@ label{
     width: 400px;
     margin: 0 auto;
     text-align: center;
+    margin: 20px 0;
 }
 
 input[type="text"], select{
@@ -55,11 +56,11 @@ transition: all .3s ease;
     border: none;
     border-radius: 3px;
     padding: 10px;
-    width: 75%;
-    margin: 0 auto;
+    width: 100%;
     background-color: rgb(8, 190, 136);
     color: white;
     cursor: pointer;
+    margin-bottom: 50px;
     transition: all .3s ease;
 }
 

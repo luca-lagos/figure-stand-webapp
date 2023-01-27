@@ -36,6 +36,7 @@ export default function Register() {
         <StateInput />
         <label htmlFor="">Item picture</label>
         <PictureInput />
+        <input className={styles.btnSubmit} type="submit" value="create" />
       </Form>
     </div>
   );
