@@ -10,7 +10,7 @@ const options = [
     title: "Comprado",
   },
   {
-    id: "whishlist",
+    id: "wishlist",
     title: "Lista de deseos",
   },
 ];

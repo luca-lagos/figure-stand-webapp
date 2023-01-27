@@ -1,34 +1,104 @@
-.container{
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
-width: 1000px;
-border: 1px solid red;
-margin: 0 auto;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px auto;
 }
 
-.figure{
-    position: relative;
+h1 {
+  font-size: 35px;
+  font-weight: bold;
+  color: black;
+  text-transform: capitalize;
+  text-decoration: underline;
+  margin-bottom: 25px;
 }
 
-.overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 250px;
-    cursor: pointer;
-    background-color: transparent;
-    color: transparent;
-    font-size: 25px;
-    font-weight: bold;
+.info{
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all .3s ease;
+    gap: 30px;
+    margin-bottom: 40px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-style: italic;
 }
 
-.overlay:hover{
-    background-color: rgba(14, 88, 158, 0.5);
-    color: white;
+.info div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info label{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-top: 0px;
+    margin-right: 7px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.figure {
+  position: relative;
+  background-color: white;
+  border: 0;
+  border-radius: 15px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.figure img {
+  border-radius: 15px;
+}
+
+.figure p{
+  font-size: 20px;
+  padding: 15px;
+  text-align: center;
+}
+
+.overlayp,
+.overlayw {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  border-radius: 15px;
+  width: 250px;
+  height: 250px;
+  cursor: pointer;
+  background-color: transparent;
+  color: transparent;
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px 0 transparent;
+  transition: all 0.3s ease;
+}
+
+.overlayp:hover {
+  background-color: rgba(14, 88, 158, 0.7);
+  box-shadow: 0 0 10px 0 rgba(14, 88, 158, 0.3);
+  color: white;
+}
+
+.overlayw:hover {
+  background-color: rgba(8, 112, 81, 0.7);
+  box-shadow: 0 0 10px 0 rgba(8, 112, 81, 0.3);
+  color: white;
 }

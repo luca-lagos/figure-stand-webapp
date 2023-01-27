@@ -12,7 +12,11 @@ export default function Figure({ item }) {
         style={{ objectFit: "cover" }}
       />
       <Link to={"edit/" + item.id}>
-        <div className={styles.overlay}>{item.name}</div>
+        <div
+          className={
+            item.state == "purchased" ? styles.overlayp : styles.overlayw
+          }
+        ><p>{item.name}</p></div>
       </Link>
     </div>
   );
